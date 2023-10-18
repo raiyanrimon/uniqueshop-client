@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 const Errorpage = () => {
   return (
-    <>
+    <div className="max-w-7xl mx-auto">
       <Navbar></Navbar>
       <div className="container text-center my-10">
         <div className="flex justify-center items-center">
@@ -21,7 +21,7 @@ const Errorpage = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
