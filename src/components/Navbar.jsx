@@ -60,10 +60,25 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            {" "}
-            <button onClick={handleSignOut} className="btn btn-primary">
-              Sign Out
-            </button>
+            <div className="md:hidden w-2/4">
+              <h2>{user.displayName}</h2>
+              <img className="avatar rounded-full" src={user.photoURL} alt="" />
+              <button onClick={handleSignOut} className="btn btn-primary">
+                Sign Out
+              </button>
+            </div>
+            <div className="md:flex items-center hidden md:visible space-x-2 ">
+              {" "}
+              <h3 className="font-semibold text-base"> {user.displayName}</h3>
+              <div className="avatar">
+                <div className="w-24 rounded-full">
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+              <button onClick={handleSignOut} className="btn btn-primary">
+                Sign Out
+              </button>
+            </div>
           </>
         ) : (
           <Link to="/login">

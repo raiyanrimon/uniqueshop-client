@@ -10,6 +10,7 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const description = form.description.value;
     const image = form.image.value;
+    const type = form.types.value;
     const newCoffee = {
       name,
       price,
@@ -17,6 +18,7 @@ const AddProduct = () => {
       rating,
       description,
       image,
+      type,
     };
     console.log(newCoffee);
     fetch("http://localhost:5000/coffee", {
@@ -37,26 +39,26 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="bg-[#F4F3F0] max-w-6xl mx-auto mt-20 md:p-24 p-10">
+    <div className="bg-[#a29a81] max-w-6xl mx-auto mt-20 md:p-24 p-10">
       <h2 className="font-extrabold text-4xl text-center my-5">
         Add a Product
       </h2>
       <form onSubmit={handleAddProduct}>
-        <div className="md:flex gap-4">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Image URL</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="image"
-                placeholder="Image URL"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Image URL</span>
+          </label>
+          <label className="input-group">
+            <input
+              type="text"
+              name="image"
+              placeholder="Image URL"
+              className="input input-bordered w-full"
+            />
+          </label>
+        </div>
 
+        <div className="md:flex gap-4">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Product Name</span>
@@ -66,6 +68,19 @@ const AddProduct = () => {
                 type="text"
                 name="name"
                 placeholder="Product Name"
+                className="input input-bordered w-full"
+              />
+            </label>
+          </div>
+          <div className="form-control md:w-1/2">
+            <label className="label">
+              <span className="label-text">Type</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="text"
+                name="type"
+                placeholder="Product Type"
                 className="input input-bordered w-full"
               />
             </label>

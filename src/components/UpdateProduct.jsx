@@ -3,7 +3,8 @@ import { toast } from "react-toastify";
 
 const UpdateProduct = () => {
   const product = useLoaderData();
-  const { _id, name, price, brandName, rating, description, image } = product;
+  const { _id, name, price, brandName, rating, description, image, type } =
+    product;
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,6 +13,7 @@ const UpdateProduct = () => {
     const brandName = form.brand.value;
     const rating = form.rating.value;
     const description = form.description.value;
+    const type = form.type.value;
     const image = form.image.value;
     const updatedProduct = {
       name,
@@ -20,6 +22,7 @@ const UpdateProduct = () => {
       rating,
       description,
       image,
+      type,
     };
     console.log(updatedProduct);
     fetch(`http://localhost:5000/product/${_id}`, {
@@ -44,22 +47,21 @@ const UpdateProduct = () => {
         Update a Product
       </h2>
       <form onSubmit={handleUpdateProduct}>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Image URL</span>
+          </label>
+          <label className="input-group">
+            <input
+              type="text"
+              defaultValue={image}
+              name="image"
+              placeholder="Image URL"
+              className="input input-bordered w-full"
+            />
+          </label>
+        </div>
         <div className="md:flex gap-4">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Image URL</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                defaultValue={image}
-                name="image"
-                placeholder="Image URL"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Product Name</span>
@@ -70,6 +72,20 @@ const UpdateProduct = () => {
                 name="name"
                 defaultValue={name}
                 placeholder="Product Name"
+                className="input input-bordered w-full"
+              />
+            </label>
+          </div>
+          <div className="form-control md:w-1/2">
+            <label className="label">
+              <span className="label-text">Type</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="text"
+                defaultValue={type}
+                name="type"
+                placeholder="Product Type"
                 className="input input-bordered w-full"
               />
             </label>
