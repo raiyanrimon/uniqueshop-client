@@ -10,7 +10,7 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const description = form.description.value;
     const image = form.image.value;
-    const type = form.types.value;
+    const type = form.type.value;
     const newCoffee = {
       name,
       price,
@@ -21,7 +21,7 @@ const AddProduct = () => {
       type,
     };
     console.log(newCoffee);
-    fetch("http://localhost:5000/coffee", {
+    fetch(`http://localhost:5000/product`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
