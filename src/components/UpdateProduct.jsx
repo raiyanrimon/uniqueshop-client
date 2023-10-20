@@ -3,8 +3,7 @@ import { toast } from "react-toastify";
 
 const UpdateProduct = () => {
   const product = useLoaderData();
-  const { _id, name, price, brandName, rating, description, image, type } =
-    product;
+  const { _id, name, price, brandName, rating, image, type } = product;
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,7 +11,6 @@ const UpdateProduct = () => {
     const price = form.price.value;
     const brandName = form.brand.value;
     const rating = form.rating.value;
-    const description = form.description.value;
     const type = form.type.value;
     const image = form.image.value;
     const updatedProduct = {
@@ -20,12 +18,11 @@ const UpdateProduct = () => {
       price,
       brandName,
       rating,
-      description,
       image,
       type,
     };
     console.log(updatedProduct);
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`http://localhost:5000/product/${brandName}/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -47,20 +44,6 @@ const UpdateProduct = () => {
         Update a Product
       </h2>
       <form onSubmit={handleUpdateProduct}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Image URL</span>
-          </label>
-          <label className="input-group">
-            <input
-              type="text"
-              defaultValue={image}
-              name="image"
-              placeholder="Image URL"
-              className="input input-bordered w-full"
-            />
-          </label>
-        </div>
         <div className="md:flex gap-4">
           <div className="form-control md:w-1/2">
             <label className="label">
@@ -78,14 +61,14 @@ const UpdateProduct = () => {
           </div>
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Type</span>
+              <span className="label-text">Image URL</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
-                defaultValue={type}
-                name="type"
-                placeholder="Product Type"
+                defaultValue={image}
+                name="image"
+                placeholder="Image URL"
                 className="input input-bordered w-full"
               />
             </label>
@@ -124,14 +107,14 @@ const UpdateProduct = () => {
         <div className="md:flex gap-4">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Short Description</span>
+              <span className="label-text">Type</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
-                name="description"
-                defaultValue={description}
-                placeholder="Short Description"
+                defaultValue={type}
+                name="type"
+                placeholder="Product Type"
                 className="input input-bordered w-full"
               />
             </label>
@@ -154,7 +137,7 @@ const UpdateProduct = () => {
 
         <input
           type="submit"
-          value="Add Product"
+          value="Update Product"
           className="btn btn-block mt-3"
         />
       </form>

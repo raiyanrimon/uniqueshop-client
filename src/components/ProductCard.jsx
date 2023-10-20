@@ -50,7 +50,7 @@ const ProductCard = ({ brand }) => {
             {" "}
             <button className="btn w-full bg-cyan-400">Details</button>
           </Link>
-          <Link to={`/update/${brand._id}`}>
+          <Link to={`/update/${brand.brandName}/${brand._id}`}>
             <button className="btn w-full bg-green-300">Update Product</button>
           </Link>
         </div>
