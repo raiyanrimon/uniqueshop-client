@@ -26,6 +26,7 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(name, photo, email, password);
+
     const passwordValidation =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#]).{6,}$/;
     if (!passwordValidation.test(password)) {
@@ -41,6 +42,16 @@ const Register = () => {
             displayName: name,
             photoURL: photo,
           });
+          const users = { email };
+          fetch("http://localhost:5000/user", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(users),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
         })
         .catch((error) => console.error(error));
     }
