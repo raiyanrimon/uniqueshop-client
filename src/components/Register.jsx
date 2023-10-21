@@ -44,7 +44,7 @@ const Register = () => {
           });
           const users = { email };
           fetch(
-            "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/user",
+            "https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/user",
             {
               method: "POST",
               headers: {

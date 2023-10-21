@@ -7,7 +7,7 @@ const CartItem = ({ crt, items, setItems }) => {
   const handleDeleteCart = (_id) => {
     console.log(_id);
     fetch(
-      `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/cart/${_id}`,
+      `https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/cart/${_id}`,
       {
         method: "DELETE",
         headers: {

@@ -22,7 +22,7 @@ const AddProduct = () => {
     };
     console.log(newProduct);
     fetch(
-      `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product`,
+      `https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/product`,
       {
         method: "POST",
         headers: {

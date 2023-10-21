@@ -13,7 +13,7 @@ const Cart = () => {
 
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5">
-      {cart.map((crt) => (
+      {items?.map((crt) => (
         <CartItem
           key={crt._id}
           items={items}

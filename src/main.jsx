@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           fetch(
-            "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/brand"
+            "https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/brand"
           ),
       },
       {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         path: "/cart",
         loader: () =>
           fetch(
-            "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/cart"
+            "https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/cart"
           ),
         element: (
           <PrivateRoute>
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         path: "/update/:product/:id",
         loader: ({ params }) =>
           fetch(
-            `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${params.product}/${params.id}`
+            `https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/product/${params.product}/${params.id}`
           ),
         element: (
           <PrivateRoute>
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         element: <BrandPage></BrandPage>,
         loader: ({ params }) =>
           fetch(
-            `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${params.product}`
+            `https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/product/${params.product}`
           ),
       },
       {
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${params.product}/${params.id}`
+            `https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/product/${params.product}/${params.id}`
           ),
       },
     ],

@@ -11,7 +11,7 @@ const SingleProduct = () => {
   const cart = { email, name, brandName, price, image };
   const handleAddtoCart = () => {
     fetch(
-      "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/cart",
+      "https://unique-shop-server-75yzugdl5-golam-raiyans-projects.vercel.app/cart",
       {
         method: "POST",
         headers: {
