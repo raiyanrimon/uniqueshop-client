@@ -22,13 +22,16 @@ const UpdateProduct = () => {
       type,
     };
     console.log(updatedProduct);
-    fetch(`http://localhost:5000/product/${brandName}/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${brandName}/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

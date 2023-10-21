@@ -26,7 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brand"),
+        loader: () =>
+          fetch(
+            "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/brand"
+          ),
       },
       {
         path: "/register",
@@ -38,6 +41,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
+        loader: () =>
+          fetch(
+            "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/cart"
+          ),
         element: (
           <PrivateRoute>
             <Cart></Cart>
@@ -55,7 +62,9 @@ const router = createBrowserRouter([
       {
         path: "/update/:product/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.product}/${params.id}`),
+          fetch(
+            `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${params.product}/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <UpdateProduct></UpdateProduct>
@@ -66,7 +75,9 @@ const router = createBrowserRouter([
         path: "/products/:product",
         element: <BrandPage></BrandPage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.product}`),
+          fetch(
+            `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${params.product}`
+          ),
       },
       {
         path: "/products/:product/:id",
@@ -76,7 +87,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.product}/${params.id}`),
+          fetch(
+            `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product/${params.product}/${params.id}`
+          ),
       },
     ],
   },

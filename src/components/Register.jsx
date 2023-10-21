@@ -43,13 +43,16 @@ const Register = () => {
             photoURL: photo,
           });
           const users = { email };
-          fetch("http://localhost:5000/user", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(users),
-          })
+          fetch(
+            "https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/user",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(users),
+            }
+          )
             .then((res) => res.json())
             .then((data) => console.log(data));
         })

@@ -11,7 +11,7 @@ const AddProduct = () => {
     const description = form.description.value;
     const image = form.image.value;
     const type = form.type.value;
-    const newCoffee = {
+    const newProduct = {
       name,
       price,
       brandName,
@@ -20,14 +20,17 @@ const AddProduct = () => {
       image,
       type,
     };
-    console.log(newCoffee);
-    fetch(`http://localhost:5000/product`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCoffee),
-    })
+    console.log(newProduct);
+    fetch(
+      `https://unique-shop-server-cgne3mnfw-golam-raiyans-projects.vercel.app/product`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

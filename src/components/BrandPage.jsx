@@ -16,7 +16,7 @@ const BrandPage = () => {
       </div>
     );
   }
-  console.log(brands);
+
   return (
     <div className="space-y-10">
       <Swiper
@@ -26,8 +26,6 @@ const BrandPage = () => {
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
       >
         {brands.map((brand) => (
           <SwiperSlide key={brand._id}>
